@@ -24,3 +24,12 @@ function actionWhenFound(index) {
 }
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+
+
+// Same code as above with arrow functions
+
+function findWaldo(arr, found) {
+    arr.forEach((name, i) => { if (name == "Waldo") found(i); });
+}
+
+findWaldo(["Alice", "Bob", "Waldo", "Winston"], i => console.log("Found Waldo at index " + i + "!"));
